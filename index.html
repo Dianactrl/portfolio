@@ -1,0 +1,163 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Диана — Портфолио</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+        <div class="floating-bg">
+    <span class="circle c1"></span>
+    <span class="circle c2"></span>
+    <span class="circle c3"></span>
+</div>
+
+
+    <!-- HERO -->
+    <section id="hero" class="container">
+        <div class="text">
+            <h1 class="typing"><span id="typed-text"></span></h1>
+            <p>Создаю чистую, аккуратную и современную фронтенд‑разработку с плавными анимациями и продуманной структурой.</p>
+            <button onclick="scrollToContact()">Связаться</button>
+        </div>
+
+        <div class="photo">
+            <img src="Foto.jfif" alt="Диана" />
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="card fade">
+                <h2>Обо мне</h2>
+                <p>Мне 23 года, я начинающий frontend-разработчик, который любит чистый код, понятную структуру и плавные аккуратные интерфейсы. Училась самостоятельно, проходила небольшие курсы, а сейчас расту через практику, постоянное обучение и личные проекты.</p>
+                <p>В свободное время читаю книги, занимаюсь творчеством, изучаю новые технологии и подходы в разработке. Мне нравится совершенствоваться и не останавливаться на уже изученном. Я быстро учусь и всегда довожу работу до конца.</p>
+                <p>Я ответственно подхожу к задачам и стараюсь создавать интерфейсы, которые ощущаются легкими и комфортными для пользователя.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="container">
+            <h2>Опыт</h2>
+
+            <div class="item fade">
+                <h3>Верстка макетов из Figma</h3>
+                <p>Адаптивная верстка, аккуратные сетки, работа с pastel UI, плавные анимации, создание логичной структуры.</p>
+            </div>
+
+            <div class="item fade">
+                <h3>Личные проекты</h3>
+                <p>Сайты‑визитки, небольшие лендинги, экспериментальные UI‑элементы, анимированные блоки, кастомные компоненты.</p>
+            </div>
+
+            <div class="item fade">
+                <h3>Учебные работы</h3>
+                <p>Практика HTML, CSS, JavaScript, адаптивной верстки и интерактивных элементов.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+<section id="services">
+    <div class="container">
+        <h2>Услуги</h2>
+
+        <div class="services-grid">
+            <div class="service-card fade">
+                <h3>Верстка сайта по макету (Figma)</h3>
+                <p>Создание аккуратного, адаптивного и структурированного сайта по готовому дизайну из Figma.</p>
+            </div>
+
+            <div class="service-card fade">
+                <h3>Перенос сайта из Figma в Tilda</h3>
+                <p>Точный перенос макета в Tilda с сохранением стиля, сетки и аккуратности элементов.</p>
+            </div>
+
+            <div class="service-card fade">
+                <h3>Адаптивная верстка</h3>
+                <p>Настройка корректного отображения на телефонах, планшетах и компьютерах.</p>
+            </div>
+
+            <div class="service-card fade">
+                <h3>Доработка и улучшение кода</h3>
+                <p>Исправление ошибок, оптимизация структуры, обновление стилей, анимаций и поведения интерфейса.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Портфолио</h2>
+
+            <div class="portfolio-grid">
+                <div class="project fade">
+                    <img src="1.png" alt="Проект 1" />
+                    <div class="info">
+                        <h3>Адаптивная верстка по макету Figma.</h3>
+                        <a href="https://dianactrl.github.io/ARhub/" target="_blank" class="btn-link">Посмотреть сайт</a>
+                        <p>Сделала аккуратную структуру, чистый код и анимации. Реализовала мобильную, планшетную и десктопную версии, добившись полной pixel-perfect точности.</p>
+                    </div>
+                </div>
+
+                <div class="project fade">
+                    <img src="2.png" alt="Проект 2" />
+                    <div class="info">
+                        <h3>Реализация макета на Tilda (Zero Block).</h3>
+                        <a href="https://studioctrlz.ru" target="_blank" class="btn-link">Посмотреть сайт</a>
+                        <p>Собрала страницу с помощью Zero Block, передала визуальный стиль, настроила анимации и адаптив. Работала с сетками, слоями и динамическими элементами.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <h2>Навыки</h2>
+            <div class="skills-chips">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">React</span>
+                <span class="chip">Figma</span>
+                <span class="chip">UI/UX</span>
+                <span class="chip">Адаптивная верстка</span>
+                <span class="chip">Git</span>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- CONTACTS -->
+    <section id="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="links">
+                <a href="https://t.me/dibeglik" target="_blank">Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js">function toggleTheme(){ document.body.classList.toggle('dark'); }
+</script>
+<div class="decor decor-1"></div>
+<div class="decor decor-2"></div>
+<div class="decor decor-3"></div>
+<button class="theme-toggle" onclick="toggleTheme()">Тема</button>
+
+</body>
+</html>
+
+
