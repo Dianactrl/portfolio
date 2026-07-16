@@ -1,4 +1,6 @@
 
+
+
 function scrollToContact() {
     document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
 }
@@ -10,6 +12,8 @@ function scrollToPortfolio() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+        startLoader();
 
 
     const fadeElements = document.querySelectorAll('.fade');
@@ -148,5 +152,90 @@ function applyTranslations(){
     });
        document.documentElement.lang = currentLanguage;
 
+
+}
+
+const codeLines = [
+
+`<section id="hero">`,
+`<div class="hero-grid">`,
+`<button class="glass-btn">`,
+`display:grid;`,
+`display:flex;`,
+`justify-content:center;`,
+`align-items:center;`,
+`grid-template-columns:repeat(3,1fr);`,
+`backdrop-filter:blur(20px);`,
+`transition:.3s ease;`,
+`transform:translateY(-3px);`,
+`border-radius:24px;`,
+`box-shadow:var(--glass-shadow);`,
+`const observer = new IntersectionObserver(...);`,
+`document.querySelectorAll(".fade");`,
+`window.addEventListener("scroll");`,
+`function applyTranslations(){}`,
+`const currentLanguage = localStorage.getItem("language");`,
+`document.querySelector("#typed-text");`,
+`scrollIntoView({behavior:"smooth"});`,
+`addEventListener("DOMContentLoaded");`,
+`opacity:1;`,
+`animation:fade .6s;`,
+`<div class="portfolio-card">`,
+`<img src="project.png">`,
+`const translations = {...};`,
+`function initTypingEffect(){}`,
+`const loader = document.querySelector("#loader");`,
+`HTML • CSS • JavaScript`,
+`Pixel Perfect`,
+`Responsive Layout`
+
+];
+
+function startLoader(){
+
+    const code = document.getElementById("loaderCode");
+
+
+    let interval = setInterval(() => {
+
+        const line = document.createElement("div");
+
+        line.className = "code-line";
+
+        line.textContent =
+            codeLines[
+                Math.floor(Math.random()*codeLines.length)
+            ];
+
+        line.style.left =
+              Math.random() * window.innerWidth + "px";
+
+        line.style.animationDuration =
+            (1.6 + Math.random()*1.2) + "s";
+
+        line.style.fontSize =
+            (13 + Math.random()*4) + "px";
+
+        code.appendChild(line);
+
+        setTimeout(()=>{
+
+            line.remove();
+
+        },3000);
+
+    },20);
+
+
+
+    setTimeout(()=>{
+
+        clearInterval(interval);
+
+        document
+            .getElementById("loader")
+            .classList.add("hide");
+
+    },2000);
 
 }
