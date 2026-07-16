@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,17 +17,22 @@
         <span class="glow-sphere sphere-3"></span>
     </div>
 
-    <header class="glass-header">
-        <div class="logo">Диана.<span>dev</span></div>
-        <button class="nav-contact-btn" onclick="scrollToContact()">Связаться</button>
-    </header>
+    <div class="language-switcher">
+    <button id="ruBtn" class="lang-btn active">
+        RU
+    </button>
+    <button id="enBtn" class="lang-btn">
+        EN
+    </button>
+</div>
 
     <section id="hero" class="container">
         <div class="hero-grid">
             <div class="hero-text">
-                <h1 class="typing"><span id="typed-text"></span></h1>
-                <p>Создаю чистую, аккуратную и современную фронтенд‑разработку с плавными анимациями и продуманной структурой.</p>
-                <button class="glass-btn" onclick="scrollToContact()">Начать проект</button>
+                <h1 class="typing"><span id="typed-text" data-lang="heroTitle"></span></h1>
+                <p data-lang="heroText">Создаю адаптивные сайты по макетам Figma с чистым кодом, плавными анимациями и вниманием к деталям.</p>
+                <button class="glass-btn"onclick="scrollToContact()"data-lang="startProject">Начать проект</button>
+                <button class="glass-btn glass-btn-secondary"onclick="scrollToPortfolio()"data-lang="viewWorks">Посмотреть работы</button>
             </div>
             <div class="hero-photo-container">
                 <div class="photo-glass-frame">
@@ -37,75 +42,105 @@
         </div>
     </section>
 
-    <section id="about" class="container fade">
-        <div class="glass-card">
-            <h2>Обо мне</h2>
-            <p>Мне 23 года, я frontend-разработчик, который любит чистый код, понятную структуру и плавные аккуратные интерфейсы. Училась самостоятельно, проходила небольшие курсы, а сейчас расту через практику, постоянное обучение и личные проекты.</p>
-            <p>В свободное время читаю книги, занимаюсь творчеством, изучаю новые технологии и подходы в разработке. Мне нравится совершенствоваться и не останавливаться на уже изученном. Я быстро учусь и всегда довожу работу до конца.</p>
-            <p>Я ответственно подхожу к задачам и стараюсь создавать интерфейсы, которые ощущаются легкими и комфортными для пользователя.</p>
+      <section id="services" class="container">
+        <h2 data-lang="servicesTitle">Чем могу помочь</h2>
+        <div class="services-grid">
+            <div class="service-glass-card fade">
+                <h3 data-lang="service1Title">Верстка макетов из Figma</h3>
+                <p data-lang="service1Text">Создаю адаптивные сайты по макетам Figma с использованием HTML, CSS и JavaScript. Гарантирую Pixel Perfect верстку, чистый код и корректное отображение на всех устройствах.</p>
+            </div>
+            <div class="service-glass-card fade">
+                <h3 data-lang="service2Title">Доработка существующих сайтов</h3>
+                <p data-lang="service2Text">Исправляю ошибки верстки, улучшаю адаптивность, обновляю блоки и вношу необходимые изменения в существующие сайты.</p>
+            </div>
+            <div class="service-glass-card fade">
+                <h3 data-lang="service3Title">Доработка сайтов на WordPress</h3>
+                <p data-lang="service3Text">Дорабатываю WordPress-сайты: изменяю страницы, исправляю ошибки отображения, улучшаю адаптивность и вношу изменения в HTML, CSS и JavaScript.</p>
+            </div>
+            <div class="service-glass-card fade">
+                <h3 data-lang="service4Title">Перенос макетов из Figma в Tilda</h3>
+                <p data-lang="service4Text">Переношу макеты из Figma в Tilda с использованием Zero Block, сохраняя дизайн, структуру и адаптивность оригинального проекта.</p>
+            </div>
+             <div class="service-glass-card fade">
+                <h3 data-lang="service5Title">Создание анимаций и интерактивных элементов</h3>
+                <p data-lang="service5Text">Добавляю современные анимации, hover-эффекты, слайдеры, бургер-меню и другие интерактивные элементы на JavaScript.</p>
+            </div>
         </div>
     </section>
+
+    <section id="advantages" class="container fade">
+
+    <h2 data-lang="advantagesTitle">Почему стоит работать со мной</h2>
+
+    <div class="services-grid">
+
+        <div class="service-glass-card">
+            <h3 data-lang="advantage1Title">Pixel Perfect</h3>
+            <p data-lang="advantage1Text">Точная реализация макета с вниманием к каждой детали, чтобы готовый сайт максимально соответствовал дизайну.</p>
+        </div>
+
+        <div class="service-glass-card">
+            <h3 data-lang="advantage2Title">Адаптивная верстка</h3>
+            <p data-lang="advantage2Text">Сайт будет корректно отображаться на компьютерах, планшетах и смартфонах.</p>
+        </div>
+
+        <div class="service-glass-card">
+            <h3 data-lang="advantage3Title">Чистый код</h3>
+            <p data-lang="advantage3Text">Пишу понятный, структурированный и поддерживаемый код без лишних решений.</p>
+        </div>
+
+        <div class="service-glass-card">
+            <h3 data-lang="advantage4Title">Внимание к деталям</h3>
+            <p data-lang="advantage4Text">Аккуратно прорабатываю каждый элемент интерфейса для качественного результата.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
 
     <section id="skills" class="container fade">
         <div class="glass-card">
-            <h2>Навыки</h2>
+            <h2 data-lang="skillsTitle">Навыки</h2>
             <div class="skills-chips">
-                <span class="chip">HTML</span>
-                <span class="chip">CSS</span>
+
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
                 <span class="chip">JavaScript</span>
-                <span class="chip">React</span>
                 <span class="chip">Figma</span>
-                <span class="chip">UI/UX</span>
-                <span class="chip">Адаптивная верстка</span>
-                <span class="chip">Git</span>
                 <span class="chip">Tilda</span>
+                <span class="chip">WordPress</span>
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+
             </div>
         </div>
     </section>
 
-    <section id="services" class="container">
-        <h2>Опыт и Услуги</h2>
-        <div class="services-grid">
-            <div class="service-glass-card fade">
-                <h3>Верстка макетов из Figma</h3>
-                <p>Адаптивная верстка, аккуратные сетки, работа с pastel UI, плавные анимации, создание логичной структуры.</p>
-            </div>
-            <div class="service-glass-card fade">
-                <h3>Личные проекты</h3>
-                <p>Сайты‑визитки, небольшие лендинги, экспериментальные UI‑элементы, анимированные блоки, кастомные компоненты.</p>
-            </div>
-            <div class="service-glass-card fade">
-                <h3>Верстка сайта по макету</h3>
-                <p>Создание аккуратного, адаптивного и структурированного сайта по готовому дизайну из Figma.</p>
-            </div>
-            <div class="service-glass-card fade">
-                <h3>Перенос из Figma в Tilda</h3>
-                <p>Точный перенос макета в Tilda с сохранением стиля, сетки и аккуратности элементов (Zero Block).</p>
-            </div>
-        </div>
-    </section>
+
 
     <section id="portfolio" class="container">
-        <h2>Портфолио</h2>
-        <p class="portfolio-hint">Нажми на карточку, чтобы посмотреть детали проекта</p>
+        <h2 data-lang="portfolioTitle">Портфолио</h2>
+        <p class="portfolio-hint" data-lang="portfolioHint">Нажмите на карточку, чтобы узнать больше о проекте.</p>
 
         <div class="portfolio-grid">
 
             <div class="project-flip-card fade" onclick="this.classList.toggle('flipped')">
                 <div class="card-inner">
                     <div class="card-front">
-                        <div class="glass-badge">Проект 01</div>
+                        <div class="glass-badge">HTML • CSS • JavaScript</div>
                         <h3>ARhub</h3>
-                        <p class="front-desc">Адаптивная верстка по макету Figma</p>
-                        <span class="flip-action-hint">Посмотреть кейс →</span>
+                        <p class="front-desc" data-lang="project1Front">Адаптивная верстка по макету Figma</p>
+                        <span class="flip-action-hint" data-lang="projectHint">Посмотреть кейс →</span>
                     </div>
                     <div class="card-back">
                         <div class="img-wrapper">
                             <img src="1.png" alt="Проект 1" />
                         </div>
                         <div class="back-info">
-                            <p>Сделала аккуратную структуру, чистый код и анимации. Полная pixel-perfect точность под все устройства.</p>
-                            <a href="https://dianactrl.github.io/ARhub/" target="_blank" class="project-link" onclick="event.stopPropagation();">Открыть сайт ↗</a>
+                            <p data-lang="project1Back">Адаптивная верстка сайта по макету Figma с использованием HTML, CSS и JavaScript. Реализована Pixel Perfect верстка, плавные анимации и корректное отображение на всех современных устройствах.</p>
+                            <a href="https://dianactrl.github.io/ARhub/" target="_blank" class="project-link" data-lang="projectLink" onclick="event.stopPropagation();">Открыть сайт ↗</a>
                         </div>
                     </div>
                 </div>
@@ -114,18 +149,18 @@
             <div class="project-flip-card fade" onclick="this.classList.toggle('flipped')">
                 <div class="card-inner">
                     <div class="card-front">
-                        <div class="glass-badge">Проект 02</div>
+                        <div class="glass-badge">Tilda • Zero Block</div>
                         <h3>Studio Ctrl Z</h3>
-                        <p class="front-desc">Реализация макета на Tilda</p>
-                        <span class="flip-action-hint">Посмотреть кейс →</span>
+                        <p class="front-desc" data-lang="project2Front">Реализация макета на Tilda</p>
+                        <span class="flip-action-hint" data-lang="projectHint">Посмотреть кейс →</span>
                     </div>
                     <div class="card-back">
                         <div class="img-wrapper">
                             <img src="2.png" alt="Проект 2" />
                         </div>
                         <div class="back-info">
-                            <p>Собрала страницу с помощью Zero Block, передала визуальный стиль, настроила анимации, сетки и слои.</p>
-                            <a href="https://studioctrlz.ru" target="_blank" class="project-link" onclick="event.stopPropagation();">Открыть сайт ↗</a>
+                            <p data-lang="project2Back">Перенос макета из Figma в Tilda с использованием Zero Block. Настроены адаптивность, анимации, структура блоков и сохранено точное соответствие оригинальному дизайну.</p>
+                            <a href="https://studioctrlz.ru" target="_blank" class="project-link" data-lang="projectLink" onclick="event.stopPropagation();">Открыть сайт ↗</a>
                         </div>
                     </div>
                 </div>
@@ -134,18 +169,18 @@
             <div class="project-flip-card fade" onclick="this.classList.toggle('flipped')">
                 <div class="card-inner">
                     <div class="card-front">
-                        <div class="glass-badge">Проект 03</div>
+                        <div class="glass-badge">Tilda</div>
                         <h3>Morning Cup</h3>
-                        <p class="front-desc">Сборка на Tilda с нуля</p>
-                        <span class="flip-action-hint">Посмотреть кейс →</span>
+                       <p class="front-desc" data-lang="project3Front">Сборка на Tilda с нуля</p>
+                        <span class="flip-action-hint" data-lang="projectHint">Посмотреть кейс →</span>
                     </div>
                     <div class="card-back">
                         <div class="img-wrapper">
                             <img src="coffee.png" alt="Проект 3" />
                         </div>
                         <div class="back-info">
-                            <p>Выстроена логичная структура, реализован адаптив, добавлены плавные анимации и формы обратной связи.</p>
-                            <a href="http://morningcup.tilda.ws" target="_blank" class="project-link" onclick="event.stopPropagation();">Открыть сайт ↗</a>
+                            <p data-lang="project3Back">Разработка адаптивного сайта на Tilda с нуля. Создана логичная структура страниц, настроены формы обратной связи и добавлены плавные анимации для улучшения пользовательского опыта.</p>
+                            <a href="http://morningcup.tilda.ws" target="_blank" class="project-link" data-lang="projectLink" onclick="event.stopPropagation();">Открыть сайт ↗</a>
                         </div>
                     </div>
                 </div>
@@ -155,18 +190,18 @@
             <div class="project-flip-card fade" onclick="this.classList.toggle('flipped')">
                 <div class="card-inner">
                     <div class="card-front">
-                        <div class="glass-badge">Проект 04</div>
+                        <div class="glass-badge">Figma → Tilda</div>
                         <h3>Кружок</h3>
-                        <p class="front-desc">Верстка на Tilda по макету Figma</p>
-                        <span class="flip-action-hint">Посмотреть кейс →</span>
+                        <p class="front-desc" data-lang="project4Front">Верстка на Tilda по макету Figma</p>
+                        <span class="flip-action-hint" data-lang="projectHint">Посмотреть кейс →</span>
                     </div>
                     <div class="card-back">
                         <div class="img-wrapper">
                             <img src="Кружок.png" alt="Проект 4" />
                         </div>
                         <div class="back-info">
-                            <p> Перенос с Figma, использование Zero-блоков. Добавлены разные анимации</p>
-                            <a href="https://express-ajar-char.tilda.ws" target="_blank" class="project-link" onclick="event.stopPropagation();">Открыть сайт ↗</a>
+                            <p data-lang="project4Back"> Верстка сайта на Tilda по макету Figma с использованием Zero Block. Реализованы адаптивность, анимации и аккуратная структура, полностью соответствующая исходному дизайну.</p>
+                            <a href="https://express-ajar-char.tilda.ws" target="_blank" class="project-link" data-lang="projectLink" onclick="event.stopPropagation();">Открыть сайт ↗</a>
                         </div>
                     </div>
                 </div>
@@ -176,13 +211,59 @@
     </section>
 
     <section id="contact" class="container fade">
-        <div class="glass-card contact-card">
-            <h2>Контакты</h2>
-            <p>Буду рада обсудить ваши задачи, проекты или предложения о работе!</p>
-            <a href="https://t.me/dibeglik" target="_blank" class="contact-telegram-btn">Написать в Telegram</a>
-        </div>
+       <div class="glass-card contact-card">
+
+    <h2 data-lang="contactTitle">Контакты</h2>
+
+    <p data-lang="contactText">
+        Есть идея проекта или нужна помощь с разработкой сайта?
+        Напишите мне удобным способом и обсудим детали.
+    </p>
+
+    <a href="https://t.me/dibeglik"
+       target="_blank"
+       class="contact-main-card">
+
+        <span class="contact-title" data-lang="telegramTitle">Telegram</span>
+        <span class="contact-value">@dibeglik</span>
+
+    </a>
+
+    <div class="contact-grid">
+
+        <a href="mailto:dbeglik00@mail.ru"
+           class="contact-small-card">
+
+           <span class="contact-title" data-lang="emailTitle">Email</span>
+            <span class="contact-value">
+                dbeglik00@mail.ru
+            </span>
+
+        </a>
+
+        <a href="https://github.com/Dianactrl"
+           target="_blank"
+           class="contact-small-card">
+
+            <span class="contact-title" data-lang="githubTitle">Посмотреть GitHub</span>
+            <span class="contact-value">
+                Dianactrl
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
     </section>
 
-    <script src="script.js"></script>
+    <footer class="footer">
+
+    <p>© 2026 Diana. Frontend Developer.</p>
+
+</footer>
+
+    <script src="lang.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

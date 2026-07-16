@@ -2,6 +2,11 @@
 function scrollToContact() {
     document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
 }
+function scrollToPortfolio() {
+    document.querySelector('#portfolio').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,13 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
 const messageText = "Привет! Я Диана Frontend-разработчик";
 let textIndex = 0;
 
+let typingTimeout;
+
 function initTypingEffect() {
-    const targetNode = document.getElementById("typed-text");
-    if (targetNode && textIndex < messageText.length) {
-        targetNode.textContent += messageText.charAt(textIndex);
-        textIndex++;
-        setTimeout(initTypingEffect, 60);
+    clearTimeout(typingTimeout);
+    const target = document.getElementById("typed-text");
+    target.textContent = "";
+    const text = translations[currentLanguage].heroTitle;
+    let index = 0;
+    function type() {
+        if (index < text.length) {
+            target.textContent += text.charAt(index);
+            index++;
+            typingTimeout = setTimeout(type, 60);
+        }
     }
+    type();
+
 }
 
 
@@ -83,4 +98,55 @@ function initBackgroundParallax() {
         sphere2.style.transform = `translate(${-mouseX * 1.3}px, ${-mouseY * 1.3}px)`;
         sphere3.style.transform = `translate(${mouseX * 0.7}px, ${-mouseY * 0.7}px)`;
     });
+}
+
+const ruBtn = document.getElementById("ruBtn");
+const enBtn = document.getElementById("enBtn");
+
+let currentLanguage =
+    localStorage.getItem("language") || "ru";
+
+updateLanguageButtons();
+
+ruBtn.addEventListener("click", () => {
+    currentLanguage = "ru";
+    localStorage.setItem("language","ru");
+    updateLanguageButtons();
+});
+
+enBtn.addEventListener("click", () => {
+    currentLanguage = "en";
+    localStorage.setItem("language","en");
+    updateLanguageButtons();
+});
+
+function updateLanguageButtons(){
+
+    ruBtn.classList.toggle(
+        "active",
+        currentLanguage==="ru"
+    );
+
+    enBtn.classList.toggle(
+        "active",
+        currentLanguage==="en"
+    );
+
+    applyTranslations();
+    initTypingEffect();
+
+}
+
+function applyTranslations(){
+    const dict = translations[currentLanguage];
+    document.title = dict.pageTitle;
+    document.querySelectorAll("[data-lang]").forEach(element=>{
+        const key = element.dataset.lang;
+        if(dict[key]){
+            element.textContent = dict[key];
+        }
+    });
+       document.documentElement.lang = currentLanguage;
+
+
 }

@@ -27,14 +27,15 @@ body {
     width: 90%;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 80px 0;
+    padding: 110px 0;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 700;
-    margin-bottom: 30px;
-    letter-spacing: -0.5px;
+    margin-bottom: 35px;
+    letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 
@@ -82,26 +83,7 @@ h2 {
 }
 
 
-.glass-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--glass-border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
 
-.glass-header .logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-dark);
-}
-.glass-header .logo span { color: #8faec4; }
 
 .nav-contact-btn {
     padding: 10px 20px;
@@ -163,7 +145,20 @@ h2 {
     box-shadow: var(--glass-shadow);
     transition: all 0.3s ease;
 }
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
 
+.glass-btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.8);
+}
+
+.glass-btn-secondary:hover {
+    background: rgba(255,255,255,.45);
+}
 .glass-btn:hover {
     background: #ffffff;
     transform: translateY(-3px);
@@ -226,10 +221,10 @@ h2 {
 }
 
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
 .service-glass-card {
@@ -426,6 +421,65 @@ h2 {
     box-shadow: 0 8px 20px rgba(45, 49, 66, 0.2);
 }
 
+.contact-card {
+    text-align:center;
+}
+.contact-main-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    padding:24px;
+    margin-top:35px;
+    margin-bottom:20px;
+    border-radius:22px;
+    background:rgba(255,255,255,.85);
+    border:1px solid rgba(255,255,255,.95);
+    box-shadow:0 12px 30px rgba(31,38,135,.08);
+    text-decoration:none;
+    color:inherit;
+    transition:.3s;
+}
+
+.contact-main-card:hover{
+    transform:translateY(-6px);
+    background:#ffffff;
+    box-shadow:0 18px 40px rgba(31,38,135,.12);
+}
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+.contact-small-card{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    padding:22px;
+    border-radius:20px;
+    background:rgba(255,255,255,.82);
+    border:1px solid rgba(255,255,255,.95);
+    box-shadow:0 10px 25px rgba(31,38,135,.06);
+    text-decoration:none;
+    color:inherit;
+    transition:.3s;
+}
+.contact-small-card:hover{
+    transform:translateY(-6px);
+    background:#ffffff;
+    box-shadow:0 16px 35px rgba(31,38,135,.10);
+}
+.contact-title{
+    font-size:14px;
+    color:var(--text-gray);
+    font-weight:600;
+}
+.contact-value{
+    font-size:18px;
+    font-weight:700;
+    color:var(--text-dark);
+}
+
 
 .fade {
     opacity: 0;
@@ -438,6 +492,50 @@ h2 {
     transform: translateY(0);
 }
 
+.footer{
+    text-align:center;
+    padding:35px 20px;
+    color:var(--text-gray);
+    font-size:14px;
+}
+
+.language-switcher{
+
+    position:fixed;
+    top:30px;
+    right:30px;
+    display:flex;
+    gap:8px;
+    z-index:999;
+
+}
+
+.lang-btn{
+    width:52px;
+    height:40px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:600;
+    font-size:14px;
+    color:var(--text-dark);
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.8);
+    transition:.25s;
+}
+
+.lang-btn:hover{
+    transform:translateY(-2px);
+    background:white;
+}
+
+.lang-btn.active{
+    background:#2d3142;
+    color:white;
+}
+
 
 @media(max-width: 900px) {
     .hero-grid {
@@ -445,6 +543,9 @@ h2 {
         text-align: center;
         gap: 40px;
     }
+    .hero-buttons{
+    justify-content:center;
+}
     .hero-text h1 {
         font-size: 34px;
         min-height: auto;
@@ -461,8 +562,13 @@ h2 {
         padding: 30px 20px;
     }
     .container {
-        padding: 45px 0;
+        padding: 70px 0;
     }
+    .contact-grid{
+
+    grid-template-columns:1fr;
+
+}
 }
 
 
